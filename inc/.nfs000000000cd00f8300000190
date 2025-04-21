@@ -2,18 +2,20 @@
 # define CYLINDER_H
 
 # include <iostream>
-# include <iomanip>
-# include <cmath>
+
 using namespace std;
 
 class Cylinder
 {
 private:
-    double radius;
-    double height;
+    int radius;
+    int height;
 public:
     Cylinder() : radius(0), height(0) {}
-    Cylinder(double r, double h) : radius(r), height(h) {}
+    Cylinder(int r, int h){
+        radius = r;
+        height = h;
+    }
     double SurfaceArea();
     double Volume();
     double Circumference();

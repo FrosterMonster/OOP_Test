@@ -1,33 +1,43 @@
 # ifndef CYLINDER_CPP
 # define CYLINDER_CPP
 
-# include "Cylinder.h"
+#include "Cylinder.h"
+
+using namespace std;
+
+const double PI = 3.14159265358979323846;
 
 double Cylinder :: SurfaceArea(){
     
-    return ;
+    return 2 * PI * radius * (radius + height);
 }
 
 double Cylinder :: Volume(){
 
-    return ;
+    return PI * radius * radius * height;
 }
 
 double Cylinder :: Circumference(){
 
-    return ;
+    return 2 * PI * radius ;
 }
 
 istream & operator>>(istream & in, Cylinder & cldr)
 {
+	in >> cldr.radius >> cldr.height;
+	
 
-    return ;
+    return in ;
 }
 
 ostream & operator<<(ostream & out, Cylinder & cldr)
 {
+	out << fixed << setprecision(3);
+	out << "Circumference: "<< cldr.Circumference() << endl;
+	out << "SurfaceArea: "<< cldr.SurfaceArea() << endl;
+	out << "Volume: "<< cldr.Volume() << endl ;
     
-    return ;
+    return out;
 }
 
 # endif
